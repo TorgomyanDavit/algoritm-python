@@ -1,0 +1,11 @@
+---- install virtualenv ----
+1 =>    pip3 install virtualenv
+2 =>    virtualenv name
+3 =>    source packageEnv/Scripts/activate | activate env file or  ./Scripts\activate
+4 =>    deactivate
+5 =>    pip3 list
+5 =>    which python | Get-Command python
+
+---- create package json txt ----
+1   =>  pip3 freeze > package.txt
+2   =>  pip3 install -r package.txt
