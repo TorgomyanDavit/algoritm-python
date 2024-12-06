@@ -1,0 +1,14 @@
+
+1. **OpenAI GPT-3 Playground:**
+
+2. **TensorFlow Hub:**
+
+3. **Hugging Face Transformers:**
+
+4. **spaCy:**
+
+5. **Google Colab:**
+
+6. **Runway ML:
+
+7. **ml5.js:
