@@ -8,23 +8,23 @@ arrayNum = [2, 1, 3, 5, 4]
     "bubble up" to their correct positions, starting from the beginning of the array.
 '''
 
-# def bubleSort(input):
-#     swipped = True
-#     length = len(input)
+def bubleSort(input):
+    swipped = True
+    length = len(input)
 
-#     while(swipped):
-#         swipped = False
+    while(swipped):
+        swipped = False
 
-#         for index in range(length - 1):
-#             currentElem = input[index]
-#             nextElem = input[index + 1]
+        for index in range(length - 1):
+            currentElem = input[index]
+            nextElem = input[index + 1]
 
-#             if currentElem > nextElem: 
-#                 input[index] = nextElem
-#                 input[index + 1] = currentElem
-#                 swipped = True
+            if currentElem > nextElem: 
+                input[index] = nextElem
+                input[index + 1] = currentElem
+                swipped = True
 
-#     return input
+    return input
 
         
 # print(f"currentElem {bubleSort(arrayNum)}")
@@ -49,8 +49,25 @@ def SelectionSort(input):
     return input
 
 # Test the function
-print(f"Sorted list: {SelectionSort([3, 2, 5, 4, 1])}")
+# print(f"Sorted list: {SelectionSort([3, 2, 5, 4, 1])}")
 
 
+def InsertionSort(input):
+    length = len(input)
+    for index in range(1,length - 1):
+        nextElement = input[index]  
+        prevElement = index - 1  
+
+        # Find the smallest element in the unsorted portion
+        while(prevElement >= 0 and input[prevElement] > nextElement):
+            input[prevElement + 1] = input[prevElement]
+            prevElement -= 1
+
+        
+        input[prevElement + 1] = nextElement
+    return input
+
+# Test the function
+print(f"Sorted list: {InsertionSort([3, 2, 5, 4, 1])}")
 
 
