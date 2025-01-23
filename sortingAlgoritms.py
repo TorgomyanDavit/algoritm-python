@@ -51,6 +51,25 @@ def SelectionSort(input):
 # Test the function
 # print(f"Sorted list: {SelectionSort([3, 2, 5, 4, 1])}")
 
+def InsertionSort(input):
+    length = len(input)
+    for index in range(1,length - 1):
+        nextElement = input[index]  
+        prevElement = index - 1  
+
+        # Find the smallest element in the unsorted portion
+        while(prevElement >= 0 and input[prevElement] > nextElement):
+            input[prevElement + 1] = input[prevElement]
+            prevElement -= 1
+
+        
+        input[prevElement + 1] = nextElement
+    return input
+
+# Test the function
+# print(f"Sorted list: {InsertionSort([3, 2, 5, 4, 1])}")
+
+
 
 def InsertionSort(input):
     length = len(input)
@@ -68,6 +87,4 @@ def InsertionSort(input):
     return input
 
 # Test the function
-print(f"Sorted list: {InsertionSort([3, 2, 5, 4, 1])}")
-
-
+# print(f"Sorted list: {InsertionSort([3, 2, 5, 4, 1])}")
