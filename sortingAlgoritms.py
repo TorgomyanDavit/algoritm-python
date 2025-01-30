@@ -71,20 +71,31 @@ def InsertionSort(input):
 
 
 
-def InsertionSort(input):
+def QuickSort(input):
     length = len(input)
-    for index in range(1,length - 1):
-        nextElement = input[index]  
-        prevElement = index - 1  
 
-        # Find the smallest element in the unsorted portion
-        while(prevElement >= 0 and input[prevElement] > nextElement):
-            input[prevElement + 1] = input[prevElement]
-            prevElement -= 1
+    if length == 0:
+        return []
 
-        
-        input[prevElement + 1] = nextElement
-    return input
+    pivot = input[0]
+    less = []
+    equal = []
+    greater  = []
+
+    for index in range(0, length):  # Start from index 1 (skip pivot)
+        if input[index] < pivot:
+            less.append(input[index])
+        elif input[index] > pivot:
+            greater.append(input[index])
+        else:
+            equal.append(input[index])  # Add to 'equal' if equal to pivot
+    
+
+    
+    lessArr = QuickSort(less)
+    greaterArray = QuickSort(greater)
+
+    return lessArr + equal + greaterArray
 
 # Test the function
-# print(f"Sorted list: {InsertionSort([3, 2, 5, 4, 1])}")
+print(f"Sorted list: {QuickSort([3, 2, 5, 4, 1])}")
