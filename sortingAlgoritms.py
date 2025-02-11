@@ -1,4 +1,4 @@
-
+import math
 
 arrayNum = [2, 1, 3, 5, 4]
 ''' 
@@ -98,4 +98,33 @@ def QuickSort(input):
     return lessArr + equal + greaterArray
 
 # Test the function
-print(f"Sorted list: {QuickSort([3, 2, 5, 4, 1])}")
+# print(f"Sorted list: {QuickSort([3, 2, 5, 4, 1])}")
+
+def merge(leftArray, rightArray):
+    sortedArray = []
+    
+    while len(leftArray) > 0 and len(rightArray) > 0:
+        if leftArray[0] < rightArray[0]:
+            sortedArray.append(leftArray.pop(0))
+        else:
+            sortedArray.append(rightArray.pop(0))
+
+    # Add remaining elements
+    sortedArray.extend(leftArray)
+    sortedArray.extend(rightArray)
+
+    return sortedArray
+
+def MergeSort(inputArray):
+    length = len(inputArray)
+    if length <= 1:
+        return inputArray
+
+    middle = length // 2  
+    left = inputArray[:middle]
+    right = inputArray[middle:]
+
+    return merge(MergeSort(left), MergeSort(right))
+
+# Test the function
+print(f"Sorted list: {MergeSort([3, 2, 5, 4, 1])}")
